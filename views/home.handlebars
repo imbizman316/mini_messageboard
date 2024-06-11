@@ -1,0 +1,19 @@
+<h1>Hello World from template</h1>
+
+<ul>
+  {{#each messages}}
+    <li>{{this.user}}: {{this.text}} written in {{this.added}}</li>
+    <button
+      action="/message"
+      name={{this.added}}
+      method="delete"
+      onClick="{console.log(this.added)}"
+    >Delete</button>
+  {{/each}}
+</ul>
+
+<form action="/message" method="post">
+  <input type="text" name="name" />
+  <input type="text" name="content" />
+  <button type="submit">send</button>
+</form>
